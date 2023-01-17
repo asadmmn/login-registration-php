@@ -12,8 +12,8 @@ echo "<script>window.alert('Username and Password are required fields!')</script
 }
 else{
 $insert_query=mysqli_query($conn,"INSERT INTO user(username,password,email,phone,your_name)VALUES('$username','$password','$email','$phone','$your_name')")or die(mysqli_error($conn));
-echo "<script>window.alert('Account successfully created! You can now login with your credentials.')</script>";
-echo "<script>window.location.href='index.php?registered'</script>";
+echo "<script>window.alert('Account successfully created! You can now login with your username and password.')</script>";
+echo "<script>window.location.href='index.php? successfully registered'</script>";
 }
 
 ?>
