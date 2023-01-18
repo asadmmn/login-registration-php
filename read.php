@@ -1,9 +1,9 @@
 <?php
-require_once "config.php";
+require_once "conn.php";
 
 if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     $sql = "SELECT * FROM users WHERE id = ?";
-    if ($stmt = $link->prepare($sql)) {
+    if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("i", $_GET["id"]);
         if ($stmt->execute()) {
             $result = $stmt->get_result();
@@ -25,7 +25,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
         }
     }
     $stmt->close();
-    $link->close();
+    $conn->close();
 } else {
     echo "Error! Please try again later.";
     exit();
